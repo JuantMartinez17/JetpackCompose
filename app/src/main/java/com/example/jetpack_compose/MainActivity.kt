@@ -3,6 +3,7 @@ package com.example.jetpack_compose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -22,6 +23,15 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
+    fun MyTexts(){
+
+        Column{
+            MyText(text = "Hola mundo usando Jetpack")
+            MyText(text = "bla bla bla")
+        }
+    }
+
+    @Composable
     fun MyText(text: String){
         Text(text = text)
     }
@@ -29,7 +39,7 @@ class MainActivity : ComponentActivity() {
     @Preview
     @Composable
     fun PreviewComponent(){
-        MyText(text = "Hola mundo prueba")
+        MyTexts()
     }
 }
 
