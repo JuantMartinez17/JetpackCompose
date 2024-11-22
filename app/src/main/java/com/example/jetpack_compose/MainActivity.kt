@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -46,8 +47,20 @@ class MainActivity : ComponentActivity() {
         Image(
             painter = painterResource(id = R.drawable.ic_launcher_foreground),
             contentDescription = "Imagen de prueba",
-            modifier = Modifier.clip(CircleShape).background(Color.Gray).size(64.dp)
+            modifier = Modifier
+                .clip(CircleShape)
+                .background(Color.Gray)
+                .size(64.dp)
         )
+    }
+
+    @Composable
+    fun MyComponents(){
+        Row {
+            MyImage()
+            MyTexts()
+        }
+
     }
 
     @Composable
@@ -58,8 +71,7 @@ class MainActivity : ComponentActivity() {
     @Preview
     @Composable
     fun PreviewComponent(){
-        MyTexts()
-        MyImage()
+        MyComponents()
     }
 }
 
