@@ -15,6 +15,21 @@ import com.example.jetpack_compose.ui.theme.Jetpack_ComposeTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent { 
+            MyText(text = "App probando JetpackCompose")
+            MyText(text = "pindonga")
+        }
+    }
+
+    @Composable
+    fun MyText(text: String){
+        Text(text = text)
+    }
+
+    @Preview
+    @Composable
+    fun PreviewComponent(){
+        MyText(text = "Hola mundo prueba")
     }
 }
 
