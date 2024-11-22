@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -28,8 +29,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent { 
-            MyText(text = "App probando JetpackCompose")
-            MyText(text = "pindonga")
+            MyComponents()
         }
     }
 
@@ -56,7 +56,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun MyComponents(){
-        Row {
+        Row (modifier = Modifier.padding(8.dp)){
             MyImage()
             MyTexts()
         }
